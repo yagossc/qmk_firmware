@@ -93,7 +93,7 @@ endif
 CFLAGS += -Wall
 CFLAGS += -Wstrict-prototypes
 ifneq ($(strip $(ALLOW_WARNINGS)), yes)
-    CFLAGS += -Werror
+	# CFLAGS += -Werror
 endif
 #CFLAGS += -mshort-calls
 #CFLAGS += -fno-unit-at-a-time
@@ -120,7 +120,7 @@ CPPFLAGS += -w
 CPPFLAGS += -Wall
 CPPFLAGS += -Wundef
 ifneq ($(strip $(ALLOW_WARNINGS)), yes)
-    CPPFLAGS += -Werror
+	# CPPFLAGS += -Werror
 endif
 #CPPFLAGS += -mshort-calls
 #CPPFLAGS += -fno-unit-at-a-time
@@ -181,7 +181,7 @@ CREATE_MAP ?= yes
 #    --cref:    add cross reference to  map file
 #
 # Comennt out "--relax" option to avoid a error such:
-# 	(.vectors+0x30): relocation truncated to fit: R_AVR_13_PCREL against symbol `__vector_12'
+#	(.vectors+0x30): relocation truncated to fit: R_AVR_13_PCREL against symbol `__vector_12'
 #
 
 ifeq ($(CREATE_MAP),yes)
@@ -405,13 +405,13 @@ check-size:
 	if [ $(MAX_SIZE) -gt 0 ] && [ $(CURRENT_SIZE) -gt 0 ]; then \
 		$(SILENT) || printf "$(MSG_CHECK_FILESIZE)" | $(AWK_CMD); \
 		if [ $(CURRENT_SIZE) -gt $(MAX_SIZE) ]; then \
-		    printf "\n * $(MSG_FILE_TOO_BIG)"; $(PRINT_ERROR_PLAIN); \
+			printf "\n * $(MSG_FILE_TOO_BIG)"; $(PRINT_ERROR_PLAIN); \
 		else \
-		    if [ $(FREE_SIZE) -lt $(SIZE_MARGIN) ]; then \
+			if [ $(FREE_SIZE) -lt $(SIZE_MARGIN) ]; then \
 			$(PRINT_WARNING_PLAIN); printf " * $(MSG_FILE_NEAR_LIMIT)"; \
-		    else \
+			else \
 			$(PRINT_OK); $(SILENT) || printf " * $(MSG_FILE_JUST_RIGHT)"; \
-		    fi \
+			fi \
 		fi \
 	fi
 else
