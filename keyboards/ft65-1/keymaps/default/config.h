@@ -16,4 +16,13 @@
 
 #pragma once
 
+#define MOUSEKEY_INTERVAL 32
+#define MK_C_OFFSET_0 8
+#define MOUSEKEY_TIME_TO_MAX 0
+#define MOUSEKEY_DELAY 120
+#define MOUSEKEY_MAX_SPEED 3
+
+#define MOUSEKEY_WHEEL_MAX_SPEED 3
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 120
+
 // place overrides here
